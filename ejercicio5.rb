@@ -4,16 +4,15 @@
 #imprimir la definición de Hervíboro.
 
 module Herviboro
-
-class Herviboro
- 	@@definir = 'Sólo me alimento de vegetales!'
+	DEFINIR = 'Sólo me alimento de vegetales!'
  	def self.definir
- 		@@definir
- 	end
+	DEFINIR
+	end
  	def dieta
- 		"Soy un Herviboro!"
+ 	"Soy un Herviboro!"
  	end
 end
+
 
 class Animal
  	def saludar
@@ -21,14 +20,19 @@ class Animal
 	 end
 end
 
-class Conejo < Animal < Herviboro
+class Conejo < Animal
+	include Herviboro
  	def initialize(name)
 	 @name = name
 	 end
 end
+
 conejo = Conejo.new('Bugs Bunny')
 conejo.saludar
 conejo.dieta
+puts Herviboro.definir
 Herviboro.definir
+
+puts conejo.is_a? Animal
 
 #Pregunta: ¿Por qué es mejor solución la implementación de Mixin que mediante Herencia de Herencia?
