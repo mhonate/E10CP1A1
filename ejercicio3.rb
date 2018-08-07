@@ -2,9 +2,6 @@
 Se tiene la clase Vehicle que recibe como argumento un modelo y un año. El método
 engine_start enciende el vehículo.
 =end
-
-
-
 class Vehicle
 	 def initialize(model, year)
 		 @model = model
@@ -16,10 +13,14 @@ class Vehicle
 	 end
 end
 
+class Car < Vehicle
+	@@contador = 0
+	def initialize 
+
+end
+
 =begin
-	
-rescue Se pide:
-Ejercicio 3: Herencia
+rescue Se pide:Ejercicio 3: Herencia
 Crear una clase Car que herede de Vehicle
 El constructor de Car, además de heredar las propiedades de Vehicle, debe incluir un
 contador de instancias de Car.
